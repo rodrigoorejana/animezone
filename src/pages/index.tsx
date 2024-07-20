@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import Slyder from "../components/slyder";
+import Recomendation from "@/components/Recomendation";
 
 export default function Home() {
   return (
@@ -10,9 +11,9 @@ export default function Home() {
         <meta name="description" content="seu site de animes criado em nextjs" />
       </Head>
       <Header />
-      <Slyder />
       <main>
-        <h1>home</h1>
+      <Slyder />
+      <Recomendation />
       </main>
     </>
   );

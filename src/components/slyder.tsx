@@ -40,7 +40,6 @@ const Slider = () => {
         <Swiper
             slidesPerView={1}
             pagination={{ clickable: true }}
-            navigation
             autoplay={{ delay: 5000 }} // Muda para o próximo slide a cada 5 segundos
         >
             {info.length > 0 && info.map((anime) => (

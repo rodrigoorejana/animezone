@@ -1,0 +1,63 @@
+/* src/styles/Header.module.css */
+
+.dropdownMenuCustom {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: center;
+    list-style: none;
+    background-color: #fff;
+    background-clip:content-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+  }
+  span{
+    text-decoration: none;
+  }
+  .dropdownItemCustom {
+    position: relative;
+    padding: 0.25rem 1.5rem;
+    width: 100%;
+    clear: both;
+    font-weight: 400;
+    color: #fff;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+  }
+  
+  .dropdownItemCustom:hover,
+  .dropdownItemCustom:focus {
+    color: #1d2124;
+    text-decoration: none;
+    background-color: #f8f9fa;
+  }
+  
+  .dropdownLink {
+    color: #212529;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+  }
+  
+  .dropdownLink:hover,
+  .dropdownLink:focus {
+    color: #1d2124;
+    text-decoration: none;
+    background-color: #f8f9fa;
+  }
+  a{
+    text-decoration: none;
+  }

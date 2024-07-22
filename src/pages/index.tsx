@@ -3,9 +3,9 @@ import Header from "../components/Header";
 import Slyder from "../components/slyder";
 import Recomendation from "../components/Recomendation";
 import WatchNow from "../components/Watchnow";
-import Youmightliketoo from "../components/youmightliketoo";
 import QueueList from "../components/QueueList"
 import { useState, useEffect } from "react";
+import Youmightliketoo from "../components/youmightliketoo";
 
 interface AnimeAttributes {
   canonicalTitle: string;

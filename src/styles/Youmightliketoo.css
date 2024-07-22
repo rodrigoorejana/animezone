@@ -1,14 +1,19 @@
 h1 {
     margin: 10px;
 }
-.container-onepiece{
-    border: #EC7120 solid;
+
+
+.container-onepiece {
+    border: 1px solid #EC7120;
+    padding: 10px; 
 }
-.container-onepiece h1{
+
+.container-onepiece h1 {
     position: relative;
     display: inline-block;
 }
-.container-onepiece h1::after{
+
+.container-onepiece h1::after {
     content: '';
     position: absolute;
     left: 0;
@@ -17,4 +22,29 @@ h1 {
     height: 2px;
     background-color: #FF5733; 
     transform: translateX(10%);
+}
+
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+
+.image {
+    object-fit: cover; 
+    width: 100%; 
+    height: auto; 
+}
+
+
+@media (max-width: 768px) {
+    .container-onepiece {
+        padding: 5px;
+    }
+
+    .container-onepiece h1 {
+        font-size: 1.5rem; 
+    }
 }

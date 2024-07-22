@@ -4,7 +4,7 @@ import Slyder from "../components/slyder";
 import Recomendation from "../components/Recomendation";
 import WatchNow from "../components/Watchnow";
 import Youmightliketoo from "../components/youmightliketoo";
-import QueueList from "../components/QueueList";
+import QueueList from "../components/QueueList"
 import { useState, useEffect } from "react";
 
 interface AnimeAttributes {
@@ -58,7 +58,7 @@ const Home = () => {
         <Recomendation />
         <WatchNow onAddToQueue={handleAddToQueue} />
         <Youmightliketoo onAddToQueue={handleAddToQueue} />
-        <QueueList queue={queue} onRemoveFromQueue={handleRemoveFromQueue} />
+  
       </main>
     </>
   );

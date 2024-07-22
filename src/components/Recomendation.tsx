@@ -45,7 +45,7 @@ const Recommendation = () => {
     const settings = {
         infinite: true,
         slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToScroll: 1,
         arrows: true,
         prevArrow: <PrevArrow />,
         nextArrow: <NextArrow />,

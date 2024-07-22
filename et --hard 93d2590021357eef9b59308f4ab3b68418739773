@@ -1,0 +1,29 @@
+[33mcommit f4f7e14d9058d963cdfa3052462f615376484094[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Rodrigo O Costa <rodrigoorejana.rc@gmail.com>
+Date:   Mon Jul 22 17:43:12 2024 -0300
+
+    adição de componentes e lista de favoritos
+
+[33mcommit 93d2590021357eef9b59308f4ab3b68418739773[m
+Author: Rodrigo O Costa <rodrigoorejana.rc@gmail.com>
+Date:   Sat Jul 20 20:35:01 2024 -0300
+
+    adição de dois carroseis e menu de categorias
+
+[33mcommit 09ada271a8a4e6b279fe6061fdb81dcbabedf85b[m
+Author: Rodrigo O Costa <rodrigoorejana.rc@gmail.com>
+Date:   Fri Jul 19 18:55:29 2024 -0300
+
+    correcao de atributo
+
+[33mcommit decc3da9f25f5eaa8904b7e2df892fcb66a6911c[m
+Author: Rodrigo O Costa <rodrigoorejana.rc@gmail.com>
+Date:   Fri Jul 19 18:50:10 2024 -0300
+
+    primeiro commit
+
+[33mcommit a84a3d7061523ded8875f24335f3b52a8d0222d4[m
+Author: Rodrigo O Costa <rodrigoorejana.rc@gmail.com>
+Date:   Fri Jul 19 12:07:43 2024 -0300
+
+    Initial commit from Create Next App

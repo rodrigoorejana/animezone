@@ -1,5 +1,4 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Image from 'next/image';
 
 interface AnimeAttributes {
   canonicalTitle: string;
@@ -22,29 +21,29 @@ const QueueList: React.FC<QueueListProps> = ({ queue, onRemoveFromQueue }) => {
   return (
     <div className="container">
       <h1>Minha Fila</h1>
-      <div className="row">
+      <div className='container container-queue'>
         {queue.length > 0 ? (
-          queue.map((anime) => (
-            <div className="col-md-4 mb-3" key={anime.id}>
-              <div className="card">
-                <img
-                  src={anime.attributes.posterImage.small}
-                  alt={anime.attributes.canonicalTitle}
-                  className="card-img-top"
+          <ul>
+            {queue.map((anime) => (
+              <li key={anime.id}>
+                <Image 
+                  src={anime.attributes.posterImage.small} 
+                  alt={anime.attributes.canonicalTitle} 
+                  width={150} // Defina a largura desejada
+                  height={225} // Defina a altura desejada
+                  className="anime-poster" // Adiciona uma classe CSS para estilização adicional
                 />
-                <div className="card-body">
-                  <h2 className="card-title">{anime.attributes.canonicalTitle}</h2>
-                  <button
-                    type="button"
-                    className="btn btn-danger"
-                    onClick={() => onRemoveFromQueue(anime.id)}
-                  >
-                    Remover
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))
+                <h2>{anime.attributes.canonicalTitle}</h2>
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  onClick={() => onRemoveFromQueue(anime.id)}
+                >
+                  Remover
+                </button>
+              </li>
+            ))}
+          </ul>
         ) : (
           <p>Nenhum anime na fila.</p>
         )}

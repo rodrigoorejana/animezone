@@ -26,9 +26,9 @@ interface YoumightliketooProps {
 
 const Youmightliketoo: React.FC<YoumightliketooProps> = ({ onAddToQueue }) => {
     const [anime, setAnime] = useState<AnimeData | null>(null);
-
+    
     useEffect(() => {
-        fetch(`${API}/anime?filter[text]=one-piece`)
+        fetch(`${API}/anime?filter[text]=onepiece`)
             .then((response) => response.json())
             .then((response: ApiResponse) => {
                 if (response.data.length > 0) {
@@ -39,8 +39,8 @@ const Youmightliketoo: React.FC<YoumightliketooProps> = ({ onAddToQueue }) => {
 
     return (
         <div className="container">
-            <h1>VOCÊ PODE GOSTAR</h1>
-            <div className="container container-onepiece p-2 text-white">
+            <h1>ASSISTA AGORA</h1>
+            <div className="container container-onepiece p-2 text-white">  
                 {anime ? (
                     <div className="row justify-content-center">
                         <div className="col-md-4 text-center">
@@ -48,12 +48,12 @@ const Youmightliketoo: React.FC<YoumightliketooProps> = ({ onAddToQueue }) => {
                         </div>
                         <div className="col-md-8">
                             <h1>{anime.attributes.canonicalTitle}</h1>
-                            <p>Gol D. Roger era conhecido como o "Rei dos Piratas", sendo o mais forte e infame ter navegado na Grande Linha. A captura e morte de Rogério pelo Governo Mundial trouxe uma mudança em todo o mundo. Suas últimas palavras antes de sua morte revelaram a existência do maior tesouro do mundo, One Piece</p>
+                            <p>Gol D. Roger era conhecido como o "Rei dos Piratas", sendo o mais forte e infame ter navegado na Grande Linha. A captura e morte de Rogério pelo Governo Mundial trouxe uma mudança em todo o mundo. Suas últimas palavras antes de sua morte revelaram a existência do maior tesouro do mundo, One Piece.</p>
                             <button type="button" className="btn btn-warning">COMEÇAR A ASSISTIR</button>
-                            <button
-                                type="button"
-                                className="btn btn-outline-warning ms-3"
-                                onClick={() => anime && onAddToQueue(anime)}
+                            <button 
+                                type="button" 
+                                className="btn btn-outline-warning m-3" 
+                                onClick={() => onAddToQueue(anime)}
                             >
                                 ADICIONAR A FILA
                             </button>

@@ -3,6 +3,10 @@ import type { AppProps } from "next/app";
 import '../styles/slyder.css'
 import '../styles/Header.css'
 import '../styles/recomendation.css'
+import '../styles/global.css'
+import '../styles/Watchnow.css'
+import '../styles/Youmightliketoo.css'
+import '../styles/QueueList.css'
 
 export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;

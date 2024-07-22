@@ -1,9 +1,51 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import Slyder from "../components/slyder";
-import Recomendation from "@/components/Recomendation";
+import Recomendation from "../components/Recomendation";
+import WatchNow from "../components/Watchnow";
+import Youmightliketoo from "../components/youmightliketoo";
+import QueueList from "../components/QueueList";
+import { useState, useEffect } from "react";
 
-export default function Home() {
+interface AnimeAttributes {
+  canonicalTitle: string;
+  posterImage: {
+    small: string;
+  };
+  synopsis: string;
+}
+
+interface AnimeData {
+  id: string;
+  attributes: AnimeAttributes;
+}
+
+const Home = () => {
+  const [queue, setQueue] = useState<AnimeData[]>([]);
+
+  useEffect(() => {
+    const storedQueue = localStorage.getItem('animeQueue');
+    if (storedQueue) {
+      setQueue(JSON.parse(storedQueue));
+    }
+  }, []);
+
+  const handleAddToQueue = (anime: AnimeData) => {
+    const isDuplicate = queue.some((item) => item.id === anime.id);
+
+    if (!isDuplicate) {
+      const updatedQueue = [...queue, anime];
+      setQueue(updatedQueue);
+      localStorage.setItem('animeQueue', JSON.stringify(updatedQueue));
+    }
+  };
+
+  const handleRemoveFromQueue = (animeId: string) => {
+    const updatedQueue = queue.filter((item) => item.id !== animeId);
+    setQueue(updatedQueue);
+    localStorage.setItem('animeQueue', JSON.stringify(updatedQueue));
+  };
+
   return (
     <>
       <Head>
@@ -12,9 +54,14 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-      <Slyder />
-      <Recomendation />
+        <Slyder />
+        <Recomendation />
+        <WatchNow onAddToQueue={handleAddToQueue} />
+        <Youmightliketoo onAddToQueue={handleAddToQueue} />
+        <QueueList queue={queue} onRemoveFromQueue={handleRemoveFromQueue} />
       </main>
     </>
   );
-}
+};
+
+export default Home;

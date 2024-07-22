@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Image from 'next/image';
 
 interface AnimeAttributes {
     canonicalTitle: string;
@@ -44,7 +45,16 @@ const WatchNow: React.FC<WatchNowProps> = ({ onAddToQueue }) => {
                 {anime ? (
                     <div className="row justify-content-center">
                         <div className="col-md-4 text-center">
-                            <img src={anime.attributes.posterImage.small} alt={anime.attributes.canonicalTitle} className="img-fluid" />
+                            <div style={{ position: 'relative', width: '100%', height: 'auto' }}>
+                                <Image 
+                                    src={anime.attributes.posterImage.small} 
+                                    alt={anime.attributes.canonicalTitle} 
+                                    layout="responsive" 
+                                    width={150} // Ajuste conforme necessário
+                                    height={225} // Ajuste conforme necessário
+                                    className="img-fluid"
+                                />
+                            </div>
                         </div>
                         <div className="col-md-8">
                             <h1>{anime.attributes.canonicalTitle}</h1>
@@ -53,7 +63,7 @@ const WatchNow: React.FC<WatchNowProps> = ({ onAddToQueue }) => {
                             <button 
                                 type="button" 
                                 className="btn btn-outline-warning m-3" 
-                                onClick={() => onAddToQueue(anime)}
+                                onClick={() => anime && onAddToQueue(anime)}
                             >
                                 ADICIONAR A FILA
                             </button>

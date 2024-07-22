@@ -48,7 +48,7 @@ const Youmightliketoo: React.FC<YoumightliketooProps> = ({ onAddToQueue }) => {
                         </div>
                         <div className="col-md-8">
                             <h1>{anime.attributes.canonicalTitle}</h1>
-                            <p>Gol D. Roger era conhecido como o "Rei dos Piratas", sendo o mais forte e infame ter navegado na Grande Linha. A captura e morte de Rogério pelo Governo Mundial trouxe uma mudança em todo o mundo. Suas últimas palavras antes de sua morte revelaram a existência do maior tesouro do mundo, One Piece.</p>
+                            <p>Gol D. Roger era conhecido como o Rei dos Piratas, sendo o mais forte e infame ter navegado na Grande Linha. A captura e morte de Rogério pelo Governo Mundial trouxe uma mudança em todo o mundo. Suas últimas palavras antes de sua morte revelaram a existência do maior tesouro do mundo, One Piece.</p>
                             <button type="button" className="btn btn-warning">COMEÇAR A ASSISTIR</button>
                             <button 
                                 type="button" 

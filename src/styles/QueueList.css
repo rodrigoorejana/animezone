@@ -1,5 +1,6 @@
 .container-queue{
   display: flex;
+  
   align-items: center;
   border: 1px solid #EC7120;
   border-radius: 8px;

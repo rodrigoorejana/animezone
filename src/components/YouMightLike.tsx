@@ -39,7 +39,7 @@ const Youmightliketoo: React.FC<YoumightliketooProps> = ({ onAddToQueue }) => {
 
     return (
         <div className="container">
-            <h1>ASSISTA AGORA</h1>
+            <h1>VOCÊ PODE GOSTAR</h1>
             <div className="container container-onepiece p-2 text-white">  
                 {anime ? (
                     <div className="row justify-content-center">

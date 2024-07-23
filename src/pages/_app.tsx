@@ -7,7 +7,7 @@ import '../styles/global.css'
 import '../styles/Watchnow.css'
 import '../styles/Youmightliketoo.css'
 import '../styles/QueueList.css'
-import'../styles/Action.css'
+import'../styles/Categorys.css'
 import '../styles/Pagination.css'
 
 export default function App({ Component, pageProps }: AppProps) {

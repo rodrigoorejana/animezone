@@ -27,7 +27,7 @@ interface ApiResponse {
     };
 }
 
-const Action: React.FC = () => {
+const Adventure: React.FC = () => {
     const [info, setInfo] = useState<AnimeData[]>([]);
     const [total, setTotal] = useState<number>(0);
     const [offset, setOffset] = useState<number>(0);
@@ -42,7 +42,7 @@ const Action: React.FC = () => {
     }, []);
 
     useEffect(() => {
-        fetch(`${api}/anime?filter[categories]=action&page[limit]=${limitPage}&page[offset]=${offset}`)
+        fetch(`${api}/anime?filter[categories]=adventure&page[limit]=${limitPage}&page[offset]=${offset}`)
             .then((res) => res.json())
             .then((res: ApiResponse) => {
                 setInfo(res.data);
@@ -96,4 +96,4 @@ const Action: React.FC = () => {
     );
 };
 
-export default Action;
+export default Adventure;

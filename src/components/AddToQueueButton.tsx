@@ -12,14 +12,6 @@ interface AnimeAttributes {
     id: string;
     attributes: AnimeAttributes;
   }
-  
-  interface ApiResponse {
-    data: AnimeData[];
-    meta: {
-      count: number;
-    };
-  }
-
 
 interface AddToQueueButtonProps {
   anime: AnimeData;

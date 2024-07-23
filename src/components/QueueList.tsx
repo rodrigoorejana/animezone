@@ -33,7 +33,7 @@ const QueueList: React.FC<QueueListProps> = ({ queue, onRemoveFromQueue }) => {
                   height={225} 
                   className="anime-poster" 
                 />
-                <h2>{anime.attributes.canonicalTitle}</h2>
+                <h6>{anime.attributes.canonicalTitle}</h6>
                 <button
                   type="button"
                   className="btn btn-danger"

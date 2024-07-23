@@ -26,7 +26,7 @@ interface ApiResponse {
     };
 }
 
-const SliceOfLife: React.FC = () => {
+const Suspense: React.FC = () => {
     const [info, setInfo] = useState<AnimeData[]>([]);
     const [total, setTotal] = useState<number>(0);
     const [offset, setOffset] = useState<number>(0);
@@ -41,7 +41,7 @@ const SliceOfLife: React.FC = () => {
     }, []);
 
     useEffect(() => {
-        fetch(`${api}/anime?filter[categories]=SliceOfLife&page[limit]=${limitPage}&page[offset]=${offset}`)
+        fetch(`${api}/anime?filter[categories]=suspense&page[limit]=${limitPage}&page[offset]=${offset}`)
             .then((res) => res.json())
             .then((res: ApiResponse) => {
                 setInfo(res.data);
@@ -95,4 +95,4 @@ const SliceOfLife: React.FC = () => {
     );
 };
 
-export default SliceOfLife;
+export default Suspense;

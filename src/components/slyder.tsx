@@ -5,7 +5,6 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 import { SwiperSlide, Swiper } from 'swiper/react'
-import Image from 'next/image'
 
 // Definição dos tipos
 interface AnimeAttributes {
@@ -36,25 +35,15 @@ const Slider = () => {
                 console.log(filteredData);
             })
     }, [])
-
     return (
         <Swiper
             slidesPerView={1}
             pagination={{ clickable: true }}
             autoplay={{ delay: 5000 }} // Muda para o próximo slide a cada 5 segundos
-            style={{ width: '100%' }} // Defina a largura do Swiper como 100%
         >
             {info.length > 0 && info.map((anime) => (
-                <SwiperSlide key={anime.id} style={{ position: 'relative', width: '100%', height: 'auto' }}>
-                    <div style={{ position: 'relative', width: '100%', height: '400px' }}> {/* Ajuste a altura conforme necessário */}
-                        <Image 
-                            src={anime.attributes.coverImage.small} 
-                            alt={anime.attributes.canonicalTitle} 
-                            fill
-                            style={{ objectFit: 'cover' }} 
-                            priority
-                        />
-                    </div>
+                <SwiperSlide key={anime.id}>
+                    <img src={anime.attributes.coverImage.small} alt={anime.attributes.canonicalTitle} className='slide-item'/>
                 </SwiperSlide>
             ))}
         </Swiper>

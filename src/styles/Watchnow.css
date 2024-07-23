@@ -1,17 +1,25 @@
-.container-Naruto{
+.container-Naruto {
     border: #EC7120 solid;
 }
-.container-Naruto h1{
+
+.container-Naruto h1 {
     position: relative;
     display: inline-block;
 }
-.container-Naruto h1::after{
+
+.container-Naruto h1::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: -2px;
-    width: 50%; 
+    width: 50%;
     height: 2px;
-    background-color: #FF5733; 
+    background-color: #FF5733;
     transform: translateX(10%);
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+    padding-top: 150%; /* Ajuste para manter a proporção */
 }

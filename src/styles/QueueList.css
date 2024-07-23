@@ -1,21 +1,18 @@
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
-  
-  .card-img-top {
-    width: 100%;
-    height: auto;
-  }
-  
-  .card-body {
-    text-align: center;
-  }
-  
-  .btn-danger {
-    margin-top: 10px;
-  }
-  
+.container-queue{
+  display: flex;
+  align-items: center;
+  border: 1px solid #EC7120;
+  border-radius: 8px;
+  padding: 5px;
+}
+.container-queue ul{
+  flex-wrap: wrap;
+  display: flex;
+}
+.container-queue li{
+  list-style: none;
+  margin: 10px;
+}
+.container-queue img{
+  border-radius: 10px;
+}

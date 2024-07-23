@@ -29,9 +29,9 @@ const QueueList: React.FC<QueueListProps> = ({ queue, onRemoveFromQueue }) => {
                 <Image 
                   src={anime.attributes.posterImage.small} 
                   alt={anime.attributes.canonicalTitle} 
-                  width={150} // Defina a largura desejada
-                  height={225} // Defina a altura desejada
-                  className="anime-poster" // Adiciona uma classe CSS para estilização adicional
+                  width={150} 
+                  height={225} 
+                  className="anime-poster" 
                 />
                 <h2>{anime.attributes.canonicalTitle}</h2>
                 <button

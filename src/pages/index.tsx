@@ -58,7 +58,7 @@ const Home = () => {
         <Recomendation />
         <WatchNow onAddToQueue={handleAddToQueue} />
         <YouMightLike onAddToQueue={handleAddToQueue} />
-  
+        <QueueList queue={queue} onRemoveFromQueue={handleRemoveFromQueue}/>
       </main>
     </>
   );

@@ -67,7 +67,7 @@ const Header = () => {
               </Link>
             </DropdownItem>
             <DropdownItem className={styles.dropdownItemCustom}>
-              <Link href="/category/Slice-of-Life" passHref>
+              <Link href="/category/SliceofLife" passHref>
                 <span className={styles.dropdownLink}>Slice-of-Life</span>
               </Link>
             </DropdownItem>
@@ -79,11 +79,6 @@ const Header = () => {
             <DropdownItem className={styles.dropdownItemCustom}>
               <Link href="/category/Supernatural" passHref>
                 <span className={styles.dropdownLink}>Sobrenatural</span>
-              </Link>
-            </DropdownItem>
-            <DropdownItem className={styles.dropdownItemCustom}>
-              <Link href="/category/Suspense" passHref>
-                <span className={styles.dropdownLink}>Suspense</span>
               </Link>
             </DropdownItem>
           </DropdownMenu>

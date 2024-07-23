@@ -1,5 +1,4 @@
 
-
 import React, { useEffect, useState } from "react";
 import Header from '../../components/Header';
 import Pagination from "../../components/Pagination";
@@ -27,7 +26,7 @@ interface ApiResponse {
     };
 }
 
-const Adventure: React.FC = () => {
+const Drama: React.FC = () => {
     const [info, setInfo] = useState<AnimeData[]>([]);
     const [total, setTotal] = useState<number>(0);
     const [offset, setOffset] = useState<number>(0);
@@ -42,7 +41,7 @@ const Adventure: React.FC = () => {
     }, []);
 
     useEffect(() => {
-        fetch(`${api}/anime?filter[categories]=adventure&page[limit]=${limitPage}&page[offset]=${offset}`)
+        fetch(`${api}/anime?filter[categories]=drama&page[limit]=${limitPage}&page[offset]=${offset}`)
             .then((res) => res.json())
             .then((res: ApiResponse) => {
                 setInfo(res.data);
@@ -96,4 +95,4 @@ const Adventure: React.FC = () => {
     );
 };
 
-export default Adventure;
+export default Drama;

@@ -1,0 +1,26 @@
+.anime-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+.anime-list li {
+    text-align: center;
+    background-color: #EC7120;
+    border: none;
+    border-radius: 10px;
+    color: rgb(228, 209, 209);
+   
+}
+
+.anime-list img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.list-group{
+    margin-top: 20px;
+    align-items: center;
+}

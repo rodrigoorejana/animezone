@@ -17,7 +17,7 @@ const Header = () => {
           </DropdownToggle>
           <DropdownMenu align="end" className={styles.dropdownMenuCustom}>
             <DropdownItem className={styles.dropdownItemCustom}>
-              <Link href="/category/Action" passHref>
+              <Link href="../category/Action" passHref>
                 <span className={styles.dropdownLink}>Ação</span>
               </Link>
             </DropdownItem>
@@ -53,7 +53,7 @@ const Header = () => {
             </DropdownItem>
             <DropdownItem className={styles.dropdownItemCustom}>
               <Link href="/category/Sciencefiction" passHref>
-                <span className={styles.dropdownLink}>Ficção Científica</span>
+                <span className={styles.dropdownLink}>Ficção</span>
               </Link>
             </DropdownItem>
             <DropdownItem className={styles.dropdownItemCustom}>

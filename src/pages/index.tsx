@@ -7,6 +7,7 @@ import QueueList from "../components/QueueList"
 import { useState, useEffect } from "react";
 import YouMightLike from "../components/YouMightLike";
 
+
 interface AnimeAttributes {
   canonicalTitle: string;
   posterImage: {

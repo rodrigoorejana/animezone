@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+// src/pages/Action.tsx
+
+import React, { useEffect, useState } from "react";
 import Header from '../../components/Header';
 import Pagination from "../../components/Pagination";
+import AddToQueueButton from '../../components/AddToQueueButton';
 
 const api = "https://kitsu.io/api/edge";
 const limitPage = 10;
@@ -24,27 +27,40 @@ interface ApiResponse {
     };
 }
 
-const Action = () => {
+const Action: React.FC = () => {
     const [info, setInfo] = useState<AnimeData[]>([]);
     const [total, setTotal] = useState<number>(0);
     const [offset, setOffset] = useState<number>(0);
+    const [queue, setQueue] = useState<AnimeData[]>(() => {
+        // Recupera a lista do local storage, se existir
+        const savedQueue = localStorage.getItem("animeQueue");
+        return savedQueue ? JSON.parse(savedQueue) : [];
+    });
 
     useEffect(() => {
         fetch(`${api}/anime?filter[categories]=action&page[limit]=${limitPage}&page[offset]=${offset}`)
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error("Network response was not ok");
-                }
-                return res.json();
-            })
+            .then((res) => res.json())
             .then((res: ApiResponse) => {
                 setInfo(res.data);
-                setTotal(res.meta.count); // Atualiza o total de itens
+                setTotal(res.meta.count);
             })
             .catch((error) => {
                 console.error("Error fetching data:", error);
             });
-    }, [offset]); // Atualiza quando o offset mudar
+    }, [offset]);
+
+    useEffect(() => {
+        // Atualiza o local storage sempre que a lista de itens muda
+        localStorage.setItem("animeQueue", JSON.stringify(queue));
+    }, [queue]);
+
+    const handleAddToQueue = (anime: AnimeData) => {
+        setQueue((prevQueue) => {
+            const updatedQueue = [...prevQueue, anime];
+            localStorage.setItem("animeQueue", JSON.stringify(updatedQueue));
+            return updatedQueue;
+        });
+    };
 
     return (
         <div>
@@ -55,6 +71,10 @@ const Action = () => {
                         <li key={anime.id} className="list-group-item d-flex flex-column align-items-center m-1">
                             <img src={anime.attributes.posterImage.small} alt={anime.attributes.canonicalTitle} className="img-fluid m-1" />
                             {anime.attributes.canonicalTitle}
+                            <AddToQueueButton
+                                anime={anime}
+                                onAddToQueue={handleAddToQueue}
+                            />
                         </li>
                     ))}
                 </ul>
@@ -63,9 +83,8 @@ const Action = () => {
                         limit={limitPage}
                         total={total}
                         offset={offset}
-                        setOffset={setOffset} // Passa a função para atualizar o offset
+                        setOffset={setOffset}
                     />
-                    
                 )}
             </div>
         </div>

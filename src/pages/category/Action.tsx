@@ -31,11 +31,15 @@ const Action: React.FC = () => {
     const [info, setInfo] = useState<AnimeData[]>([]);
     const [total, setTotal] = useState<number>(0);
     const [offset, setOffset] = useState<number>(0);
-    const [queue, setQueue] = useState<AnimeData[]>(() => {
-        // Recupera a lista do local storage, se existir
-        const savedQueue = localStorage.getItem("animeQueue");
-        return savedQueue ? JSON.parse(savedQueue) : [];
-    });
+    const [queue, setQueue] = useState<AnimeData[]>([]);
+
+    useEffect(() => {
+        // Recupera a lista do local storage, se existir, apenas no lado do cliente
+        if (typeof window !== "undefined") {
+            const savedQueue = localStorage.getItem("animeQueue");
+            setQueue(savedQueue ? JSON.parse(savedQueue) : []);
+        }
+    }, []);
 
     useEffect(() => {
         fetch(`${api}/anime?filter[categories]=action&page[limit]=${limitPage}&page[offset]=${offset}`)
@@ -50,8 +54,10 @@ const Action: React.FC = () => {
     }, [offset]);
 
     useEffect(() => {
-        // Atualiza o local storage sempre que a lista de itens muda
-        localStorage.setItem("animeQueue", JSON.stringify(queue));
+        // Atualiza o local storage sempre que a lista de itens muda, apenas no lado do cliente
+        if (typeof window !== "undefined") {
+            localStorage.setItem("animeQueue", JSON.stringify(queue));
+        }
     }, [queue]);
 
     const handleAddToQueue = (anime: AnimeData) => {

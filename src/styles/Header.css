@@ -61,6 +61,11 @@
   a{
     text-decoration: none;
   }
+  @media (max-width: 425px) {
+    .best-category{
+      display: none;
+    }
+  }
   @media (max-width: 320px) {
     .best-category{
       display: none;

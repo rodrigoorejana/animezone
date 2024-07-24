@@ -11,7 +11,7 @@ const Header = () => {
       <Link href="/" passHref>
         <span className="navbar-brand">ANIMEZONE</span>
       </Link>   
-      <Nav>
+      <Nav className="ml-auto best-category" navbar>
       <Link href="../category/Action" passHref><span className="navbar-brand">Ação</span></Link>
       <Link href="../category/Adventure" passHref><span className="navbar-brand">Aventura</span></Link>
       <Link href="../category/Drama" passHref><span className="navbar-brand">Drama</span></Link>

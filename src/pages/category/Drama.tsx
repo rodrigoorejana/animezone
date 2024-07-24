@@ -70,11 +70,16 @@ const Drama: React.FC = () => {
         <div>
             <Header />
             <div className="container">
+                <h1>Drama</h1>
                 <ul className="list-group anime-list text-center items-center">
                     {info.map((anime) => (
-                        <li key={anime.id} className="list-group-item d-flex flex-column align-items-center m-1">
-                            <img src={anime.attributes.posterImage.small} alt={anime.attributes.canonicalTitle} className="img-fluid m-1" />
-                            {anime.attributes.canonicalTitle}
+                        <li key={anime.id} className="list-group-item d-flex flex-column align-items-center m-0">
+                            <img src={anime.attributes.posterImage.small} alt={anime.attributes.canonicalTitle} className="img-fluid m-0" />
+                            <div className="card-body text-center">
+                            <h5 className="card-title">
+    {anime.attributes.canonicalTitle.length > 10 ? `${anime.attributes.canonicalTitle.substring(0, 10)}...` : anime.attributes.canonicalTitle}
+</h5>
+                            </div>
                             <AddToQueueButton
                                 anime={anime}
                                 onAddToQueue={handleAddToQueue}

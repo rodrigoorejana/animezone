@@ -24,3 +24,15 @@
     margin-top: 20px;
     align-items: center;
 }
+.anime-list {
+    /* Adiciona uma pequena margem ao redor da lista de itens */
+    margin-top: 20px;
+}
+
+/* styles.css ou equivalente */
+.card-title {
+    white-space: nowrap; /* Impede a quebra de linha */
+    overflow: hidden;    /* Oculta o texto que excede o contêiner */
+    text-overflow: ellipsis; /* Adiciona reticências no final do texto excedente */
+    max-width: 100%;     /* Garante que o título não ultrapasse a largura do contêiner */
+}

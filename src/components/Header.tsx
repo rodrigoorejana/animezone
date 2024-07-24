@@ -7,9 +7,18 @@ import styles from '../styles/Header.module.css';
 const Header = () => {
   return (
     <Navbar container="md" color="dark" dark expand="md">
+     
       <Link href="/" passHref>
         <span className="navbar-brand">ANIMEZONE</span>
-      </Link>
+      </Link>   
+      <Nav>
+      <Link href="../category/Action" passHref><span className="navbar-brand">Ação</span></Link>
+      <Link href="../category/Adventure" passHref><span className="navbar-brand">Aventura</span></Link>
+      <Link href="../category/Drama" passHref><span className="navbar-brand">Drama</span></Link>
+      <Link href="../category/Romance" passHref><span className="navbar-brand">Romance</span></Link>
+      </Nav>
+       
+      
       <Nav className="ml-auto" navbar>
         <UncontrolledDropdown nav inNavbar>
           <DropdownToggle nav caret>

@@ -1,8 +1,8 @@
-
 import React, { useEffect, useState } from "react";
 import Header from '../../components/Header';
 import Pagination from "../../components/Pagination";
 import AddToQueueButton from '../../components/AddToQueueButton';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const api = "https://kitsu.io/api/edge";
 const limitPage = 10;
@@ -33,14 +33,6 @@ const Action: React.FC = () => {
     const [queue, setQueue] = useState<AnimeData[]>([]);
 
     useEffect(() => {
-        // Recupera a lista do local storage, se existir, apenas no lado do cliente
-        if (typeof window !== "undefined") {
-            const savedQueue = localStorage.getItem("animeQueue");
-            setQueue(savedQueue ? JSON.parse(savedQueue) : []);
-        }
-    }, []);
-
-    useEffect(() => {
         fetch(`${api}/anime?filter[categories]=action&page[limit]=${limitPage}&page[offset]=${offset}`)
             .then((res) => res.json())
             .then((res: ApiResponse) => {
@@ -51,6 +43,13 @@ const Action: React.FC = () => {
                 console.error("Error fetching data:", error);
             });
     }, [offset]);
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const savedQueue = localStorage.getItem("animeQueue");
+            setQueue(savedQueue ? JSON.parse(savedQueue) : []);
+        }
+    }, []);
 
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -70,11 +69,20 @@ const Action: React.FC = () => {
         <div>
             <Header />
             <div className="container">
-                <ul className="list-group anime-list text-center items-center">
+                <h1>Ação</h1>
+                <ul className="list-group anime-list text-center">
                     {info.map((anime) => (
-                        <li key={anime.id} className="list-group-item d-flex flex-column align-items-center m-1">
-                            <img src={anime.attributes.posterImage.small} alt={anime.attributes.canonicalTitle} className="img-fluid m-1" />
-                            {anime.attributes.canonicalTitle}
+                        <li key={anime.id} className="list-group-item d-flex flex-column align-items-center m-0">
+                            <img 
+                                src={anime.attributes.posterImage.small} 
+                                alt={anime.attributes.canonicalTitle} 
+                                className="img-fluid m-0" 
+                            />
+                            <div className="card-body text-center">
+                            <h5 className="card-title">
+    {anime.attributes.canonicalTitle.length > 10 ? `${anime.attributes.canonicalTitle.substring(0, 10)}...` : anime.attributes.canonicalTitle}
+</h5>
+                            </div>
                             <AddToQueueButton
                                 anime={anime}
                                 onAddToQueue={handleAddToQueue}

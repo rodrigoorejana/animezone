@@ -45,7 +45,7 @@ const QueueList: React.FC<QueueListProps> = ({ queue, onRemoveFromQueue }) => {
             ))}
           </ul>
         ) : (
-          <p>Nenhum anime na fila.</p>
+          <p>Adicione animes a sua lista</p>
         )}
       </div>
     </div>

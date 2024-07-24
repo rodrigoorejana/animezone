@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 interface AnimeAttributes {
     canonicalTitle: string;
     posterImage: {
         small: string;
     };
     synopsis: string;
+    youtubeVideoId: string;
 }
 
 interface AnimeData {
@@ -39,20 +41,31 @@ const Watchnow: React.FC<WatchnowProps> = ({ onAddToQueue }) => {
 
     return (
         <div className="container">
-            <h1>Assista Agora</h1>
-            <div className="container container-onepiece p-2 text-white">  
+            
+            <div className="container-naruto p-2">
+            
                 {anime ? (
-                    <div className="row justify-content-center">
-                        <div className="col-md-4 text-center">
-                            <img src={anime.attributes.posterImage.small} alt={anime.attributes.canonicalTitle} className="img-fluid" />
+                    <div className="row justify-content-center bg-black p-4 text-center">
+                        <h2>Assista Agora</h2>
+                        <div className="col-md-3 mb-2 mb-md-0 bg-white rounded-left">
+                            
+                            <img 
+                                src={anime.attributes.posterImage.small} 
+                                alt={anime.attributes.canonicalTitle} 
+                                className="img-fluid" 
+                                style={{ maxHeight: '600px', objectFit: 'cover' }} 
+                            />
                         </div>
-                        <div className="col-md-8">
-                            <h1>{anime.attributes.canonicalTitle}</h1>
+                        <div className="col-md-5 bg-white text-start text-black rounded-right">
+                            <h1 className="text-decoration-partial">{anime.attributes.canonicalTitle}</h1>
                             <p>Momentos antes do nascimento de Naruto Uzumaki, um enorme demônio conhecido como Kyuubi, a Raposa de Nove Caudas, atacou Konohagakure...</p>
-                            <button type="button" className="btn btn-warning">COMEÇAR A ASSISTIR</button>
+                            <div className="mb-3 ">
+                                
+                            </div>
+                            <button type="button" className="btn btn-warning m-2">COMEÇAR A ASSISTIR</button>
                             <button 
                                 type="button" 
-                                className="btn btn-outline-warning m-3" 
+                                className="btn btn-outline-dark m-2" 
                                 onClick={() => onAddToQueue(anime)}
                             >
                                 ADICIONAR A FILA

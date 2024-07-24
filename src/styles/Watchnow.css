@@ -1,25 +1,23 @@
-.container-Naruto {
-    border: #EC7120 solid;
-}
-
-.container-Naruto h1 {
-    position: relative;
+.text-decoration-partial {
     display: inline-block;
-}
-
-.container-Naruto h1::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 50%;
-    height: 2px;
-    background-color: #FF5733;
-    transform: translateX(10%);
-}
-
-.img-container {
     position: relative;
-    width: 100%;
-    padding-top: 150%; /* Ajuste para manter a proporção */
+    padding-bottom: 4px; /* Espaço para a linha */
+}
+
+.text-decoration-partial::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80%; /* Ajusta a largura da decoração */
+    height: 2px; /* Altura da linha */
+    background: linear-gradient(to right, black 50%, transparent 50%);
+}
+.rounded-left {
+    border-top-left-radius: .375rem; /* Valor para borda superior esquerda */
+    border-bottom-left-radius: .375rem; /* Valor para borda inferior esquerda */
+}
+.rounded-right {
+    border-top-right-radius: .375rem; /* Valor para a borda superior direita */
+    border-bottom-right-radius: .375rem; /* Valor para a borda inferior direita */
 }

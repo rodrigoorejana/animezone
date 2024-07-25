@@ -1,8 +1,0 @@
-
-.pagination{
-    display: flex; 
-    flex-wrap: wrap;    
-}
-.pagination-list li {
-    list-style: none;
-}

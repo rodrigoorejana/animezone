@@ -56,7 +56,7 @@ const YouMightLike: React.FC<YouMightLikeProps> = ({ onAddToQueue }) => {
                                 style={{ maxHeight: '600px', objectFit: 'cover' }} 
                             />
                         </div>
-                        <div className="col-md-5 bg-white text-start text-black rounded-right">
+                        <div className="col-md-5 text-start text-white rounded-right">
                             <h1 className="text-decoration-partial">{anime.attributes.canonicalTitle}</h1>
                             <p>Gol D. Roger era conhecido como o Rei dos Piratas, sendo o mais forte e infame ter navegado na Grande Linha. Suas últimas palavras antes de sua morte revelaram a existência do maior tesouro do mundo, One Piece.</p>
                             <div className="mb-3">
@@ -65,7 +65,7 @@ const YouMightLike: React.FC<YouMightLikeProps> = ({ onAddToQueue }) => {
                             <button type="button" className="btn btn-warning m-2">COMEÇAR A ASSISTIR</button>
                             <button 
                                 type="button" 
-                                className="btn btn-outline-dark m-2" 
+                                className="btn btn-outline-light m-2" 
                                 onClick={() => onAddToQueue(anime)}
                             >
                                 ADICIONAR A FILA

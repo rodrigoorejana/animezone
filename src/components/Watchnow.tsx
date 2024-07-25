@@ -56,7 +56,7 @@ const Watchnow: React.FC<WatchnowProps> = ({ onAddToQueue }) => {
                                 style={{ maxHeight: '600px', objectFit: 'cover' }} 
                             />
                         </div>
-                        <div className="col-md-5 bg-white text-start text-black rounded-right">
+                        <div className="col-md-5 text-start text-withe rounded-right">
                             <h1 className="text-decoration-partial">{anime.attributes.canonicalTitle}</h1>
                             <p>Momentos antes do nascimento de Naruto Uzumaki, um enorme demônio conhecido como Kyuubi, a Raposa de Nove Caudas, atacou Konohagakure...</p>
                             <div className="mb-3 ">
@@ -65,7 +65,7 @@ const Watchnow: React.FC<WatchnowProps> = ({ onAddToQueue }) => {
                             <button type="button" className="btn btn-warning m-2">COMEÇAR A ASSISTIR</button>
                             <button 
                                 type="button" 
-                                className="btn btn-outline-dark m-2" 
+                                className="btn btn-outline-light m-2" 
                                 onClick={() => onAddToQueue(anime)}
                             >
                                 ADICIONAR A FILA

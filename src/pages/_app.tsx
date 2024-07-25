@@ -7,7 +7,6 @@ import '../styles/Watchnow.css'
 import '../styles/Youmightliketoo.css'
 import '../styles/QueueList.css'
 import'../styles/Categorys.css'
-import '../styles/pagination.css';
 import '../styles/Recomendation.css'
 
 export default function App({ Component, pageProps }: AppProps) {

@@ -21,3 +21,9 @@
     border-top-right-radius: .375rem; /* Valor para a borda superior direita */
     border-bottom-right-radius: .375rem; /* Valor para a borda inferior direita */
 }
+@media (max-width: 768px) {
+    .img-card{
+        height: 100vh;
+        width: 100%;
+    }    
+}

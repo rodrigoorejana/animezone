@@ -47,12 +47,12 @@ const YouMightLike: React.FC<YouMightLikeProps> = ({ onAddToQueue }) => {
                 {anime ? (
                     <div className="row justify-content-center bg-black p-4 text-center ">
                         <h2>Você Pode Gostar</h2>
-                        <div className="col-md-3 mb-2 mb-md-0 bg-white rounded-left">
+                        <div className="col-md-3 mb-2 mb-md-0  rounded-left">
                             
                             <img 
                                 src={anime.attributes.posterImage.small} 
                                 alt={anime.attributes.canonicalTitle} 
-                                className="img-fluid" 
+                                className="img-fluid img-card"  
                                 style={{ maxHeight: '600px', objectFit: 'cover' }} 
                             />
                         </div>

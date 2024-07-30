@@ -5,6 +5,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 import { SwiperSlide, Swiper } from 'swiper/react'
+import { useRouter } from 'next/router'
 
 // Definição dos tipos
 interface AnimeAttributes {
@@ -25,6 +26,7 @@ register();
 
 const Slider = () => {
     const [info, setInfo] = useState<AnimeData[]>([])
+    const router = useRouter();
 
     useEffect(() => {
         fetch(`${API}/anime?filter[categories]=action&page[limit]=10&sort=-userCount`)
@@ -35,6 +37,9 @@ const Slider = () => {
                 console.log(filteredData);
             })
     }, [])
+    const handleClick = (id: string) => {
+        router.push(`/anime/${id}`);
+    };
     return (
         <Swiper
             slidesPerView={1}
@@ -43,7 +48,8 @@ const Slider = () => {
         >
             {info.length > 0 && info.map((anime) => (
                 <SwiperSlide key={anime.id}>
-                    <img src={anime.attributes.coverImage.small} alt={anime.attributes.canonicalTitle} className='slide-item'/>
+                    <img src={anime.attributes.coverImage.small} alt={anime.attributes.canonicalTitle} className='slide-item' style={{ maxHeight: '600px', objectFit: 'cover', cursor: 'pointer' }} 
+                                onClick={() => handleClick(anime.id)}/>
                 </SwiperSlide>
             ))}
         </Swiper>

@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useRouter } from "next/router";
 
 const API = "https://kitsu.io/api/edge";
 
@@ -83,6 +84,7 @@ const Recommendation = () => {
 
     const [info, setInfo] = useState<AnimeData[]>([]);
     const [error, setError] = useState<string | null>(null);
+    const router = useRouter();
 
     useEffect(() => {
         fetch(`${API}/anime?include=categories,mediaRelationships.destination`)
@@ -105,7 +107,9 @@ const Recommendation = () => {
     if (error) {
         return <div>Error: {error}</div>;
     }
-
+    const handleClick = (id: string) => {
+        router.push(`/anime/${id}`);
+    };
     return (
         <div className="container mt-4">
             <h1 className="mb-4">RECOMMENDATIONS FOR YOU</h1>
@@ -117,7 +121,8 @@ const Recommendation = () => {
                                 src={anime.attributes.posterImage?.small}
                                 alt={anime.attributes.canonicalTitle}
                                 className="card-img-top"
-                                style={{ height: "300px", objectFit: "cover" }}
+                                style={{ maxHeight: '600px', objectFit: 'cover', cursor: 'pointer' }} 
+                                onClick={() => handleClick(anime.id)}
                             />
                             <div className="card-body text-center">
                                 <h5 className="card-title text-truncate" style={{ maxWidth: "100%", overflow: "hidden" }}>

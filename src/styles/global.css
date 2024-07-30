@@ -33,3 +33,30 @@ body {
         display: none !important;
     }
 }
+/* components/Footer.module.css */
+
+.footer {
+    background-color: #f1f1f1;
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #ddd;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  footer{
+    margin-top: 10px;
+    background-color: #212529;
+  }
+  .socialLinks a {
+    margin: 0 0.5rem;
+    color: #EC7120;
+    text-decoration: none;
+  }
+  
+  .socialLinks a:hover {
+    text-decoration: underline;
+  }
+  

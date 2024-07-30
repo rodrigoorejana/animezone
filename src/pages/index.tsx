@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import YouMightLike from "../components/YouMightLike";
 import AnimeDetail from "./anime/[id]";
 import { AnimeData } from '../components/Types'; // Ajuste o caminho se necessário
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [queue, setQueue] = useState<AnimeData[]>([]);
@@ -57,6 +58,7 @@ const Home = () => {
         <WatchNow onAddToQueue={handleAddToQueue} />
         <YouMightLike onAddToQueue={handleAddToQueue} />
         <QueueList queue={queue} onRemoveFromQueue={handleRemoveFromQueue} />
+        <Footer/>
       </main>
 
       {/* Conditionally render AnimeDetail */}

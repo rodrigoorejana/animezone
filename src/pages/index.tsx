@@ -3,26 +3,15 @@ import Header from "../components/Header";
 import Slyder from "../components/slyder";
 import Recomendation from "../components/Recomendation";
 import WatchNow from "../components/Watchnow";
-import QueueList from "../components/QueueList"
+import QueueList from "../components/QueueList";
 import { useState, useEffect } from "react";
 import YouMightLike from "../components/YouMightLike";
-
-
-interface AnimeAttributes {
-  canonicalTitle: string;
-  posterImage: {
-    small: string;
-  };
-  synopsis: string;
-}
-
-interface AnimeData {
-  id: string;
-  attributes: AnimeAttributes;
-}
+import AnimeDetail from "./anime/[id]";
+import { AnimeData } from '../components/Types'; // Ajuste o caminho se necessário
 
 const Home = () => {
   const [queue, setQueue] = useState<AnimeData[]>([]);
+  const [selectedAnime, setSelectedAnime] = useState<AnimeData | null>(null);
 
   useEffect(() => {
     const storedQueue = localStorage.getItem('animeQueue');
@@ -47,6 +36,14 @@ const Home = () => {
     localStorage.setItem('animeQueue', JSON.stringify(updatedQueue));
   };
 
+  const handleSelect = (anime: AnimeData) => {
+    setSelectedAnime(anime);
+  };
+
+  const handleCloseDetail = () => {
+    setSelectedAnime(null);
+  };
+
   return (
     <>
       <Head>
@@ -59,8 +56,13 @@ const Home = () => {
         <Recomendation />
         <WatchNow onAddToQueue={handleAddToQueue} />
         <YouMightLike onAddToQueue={handleAddToQueue} />
-        <QueueList queue={queue} onRemoveFromQueue={handleRemoveFromQueue}/>
+        <QueueList queue={queue} onRemoveFromQueue={handleRemoveFromQueue} />
       </main>
+
+      {/* Conditionally render AnimeDetail */}
+      {selectedAnime && (
+        <AnimeDetail anime={selectedAnime} />
+      )}
     </>
   );
 };

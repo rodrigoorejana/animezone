@@ -25,7 +25,7 @@ const AddToQueueButton: React.FC<AddToQueueButtonProps> = ({ anime, onAddToQueue
       className="btn btn-warning m-3 btn-sm"
       onClick={() => onAddToQueue(anime)}
     >
-      ADICIONAR A FILA
+      ADD TO QUEUE
     </button>
   );
 };

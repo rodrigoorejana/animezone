@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import Header from '../../components/Header';
 import Pagination from "../../components/Pagination";
 import AddToQueueButton from '../../components/AddToQueueButton';
+import { useRouter } from "next/router";
+
 
 const api = "https://kitsu.io/api/edge";
 const limitPage = 10;
@@ -32,6 +34,7 @@ const Action: React.FC = () => {
     const [total, setTotal] = useState<number>(0);
     const [offset, setOffset] = useState<number>(0);
     const [queue, setQueue] = useState<AnimeData[]>([]);
+    const router = useRouter();
 
     useEffect(() => {
         // Recupera a lista do local storage, se existir, apenas no lado do cliente
@@ -66,16 +69,19 @@ const Action: React.FC = () => {
             return updatedQueue;
         });
     };
+    const handleClick = (id: string) => {
+        router.push(`/anime/${id}`);
+      };
 
     return (
         <div>
             <Header />
             <div className="container">
-                <h1>Aventura</h1>
+                <h1>Action</h1>
                 <ul className="list-group anime-list text-center items-center">
                     {info.map((anime) => (
                         <li key={anime.id} className="list-group-item d-flex flex-column align-items-center ">
-                            <img src={anime.attributes.posterImage.small} alt={anime.attributes.canonicalTitle} className="img-fluid" />
+                            <img src={anime.attributes.posterImage.small} alt={anime.attributes.canonicalTitle} className="img-fluid" style={{ maxHeight: '600px', objectFit: 'cover', cursor: 'pointer' }}  onClick={() => handleClick(anime.id)}/>
                             <div className="card-body text-center">
                                 <h5 className="card-title">
                                     {anime.attributes.canonicalTitle.length > 10 ? `${anime.attributes.canonicalTitle.substring(0, 10)}...` : anime.attributes.canonicalTitle}

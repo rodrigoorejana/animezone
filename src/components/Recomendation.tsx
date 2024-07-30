@@ -108,7 +108,7 @@ const Recommendation = () => {
 
     return (
         <div className="container mt-4">
-            <h1 className="mb-4">Recomendações para você</h1>
+            <h1 className="mb-4">RECOMMENDATIONS FOR YOU</h1>
             <Slider {...settings}>
                 {info.map((anime) => (
                     <div key={anime.id} className="p-2">

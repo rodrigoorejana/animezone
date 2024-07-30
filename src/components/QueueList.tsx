@@ -20,7 +20,7 @@ interface QueueListProps {
 const QueueList: React.FC<QueueListProps> = ({ queue, onRemoveFromQueue }) => {
   return (
     <div className="container">
-      <h1>Minha Fila</h1>
+      <h1>MY QUEUE</h1>
       <div className='container container-queue'>
         {queue.length > 0 ? (
           <ul>
@@ -39,13 +39,13 @@ const QueueList: React.FC<QueueListProps> = ({ queue, onRemoveFromQueue }) => {
                   className="btn btn-danger"
                   onClick={() => onRemoveFromQueue(anime.id)}
                 >
-                  Remover
+                  REMOVE
                 </button>
               </li>
             ))}
           </ul>
         ) : (
-          <p>Adicione animes a sua lista</p>
+          <p>ADD YOUR FIRST ANIME TO QUEUE</p>
         )}
       </div>
     </div>

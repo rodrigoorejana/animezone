@@ -36,3 +36,11 @@
     text-overflow: ellipsis; 
     max-width: 100%;     
 }
+.synopsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-height: 100px; /* Limita a altura para controlar o espaço disponível */
+    padding: 0 10px; /* Adiciona padding para um melhor ajuste visual */
+  }
+  

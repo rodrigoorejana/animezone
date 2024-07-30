@@ -12,8 +12,8 @@ const Header = () => {
         <span className="navbar-brand">ANIMEZONE</span>
       </Link>   
       <Nav className="ml-auto best-category" navbar>
-      <Link href="../category/Action" passHref><span className="navbar-brand">Ação</span></Link>
-      <Link href="../category/Adventure" passHref><span className="navbar-brand">Aventura</span></Link>
+      <Link href="../category/Action" passHref><span className="navbar-brand">Action</span></Link>
+      <Link href="../category/Adventure" passHref><span className="navbar-brand">Adventure</span></Link>
       <Link href="../category/Drama" passHref><span className="navbar-brand">Drama</span></Link>
       <Link href="../category/Romance" passHref><span className="navbar-brand">Romance</span></Link>
       </Nav>
@@ -22,22 +22,22 @@ const Header = () => {
       <Nav className="ml-auto" navbar>
         <UncontrolledDropdown nav inNavbar>
           <DropdownToggle nav caret>
-            Categorias
+            Categorys
           </DropdownToggle>
           <DropdownMenu align="end" className={styles.dropdownMenuCustom}>
             <DropdownItem className={styles.dropdownItemCustom}>
               <Link href="../category/Action" passHref>
-                <span className={styles.dropdownLink}>Ação</span>
+                <span className={styles.dropdownLink}>Action</span>
               </Link>
             </DropdownItem>
             <DropdownItem className={styles.dropdownItemCustom}>
               <Link href="/category/Adventure" passHref>
-                <span className={styles.dropdownLink}>Aventura</span>
+                <span className={styles.dropdownLink}>Adventure</span>
               </Link>
             </DropdownItem>
             <DropdownItem className={styles.dropdownItemCustom}>
               <Link href="/category/Comedy" passHref>
-                <span className={styles.dropdownLink}>Comédia</span>
+                <span className={styles.dropdownLink}>Comedy</span>
               </Link>
             </DropdownItem>
             <DropdownItem className={styles.dropdownItemCustom}>
@@ -52,17 +52,17 @@ const Header = () => {
             </DropdownItem>
             <DropdownItem className={styles.dropdownItemCustom}>
               <Link href="/category/Fantasy" passHref>
-                <span className={styles.dropdownLink}>Fantasia</span>
+                <span className={styles.dropdownLink}>Fantasy</span>
               </Link>
             </DropdownItem>
             <DropdownItem className={styles.dropdownItemCustom}>
               <Link href="/category/Music" passHref>
-                <span className={styles.dropdownLink}>Música</span>
+                <span className={styles.dropdownLink}>Music</span>
               </Link>
             </DropdownItem>
             <DropdownItem className={styles.dropdownItemCustom}>
               <Link href="/category/Sciencefiction" passHref>
-                <span className={styles.dropdownLink}>Ficção</span>
+                <span className={styles.dropdownLink}>Fiction</span>
               </Link>
             </DropdownItem>
             <DropdownItem className={styles.dropdownItemCustom}>
@@ -82,12 +82,12 @@ const Header = () => {
             </DropdownItem>
             <DropdownItem className={styles.dropdownItemCustom}>
               <Link href="/category/Sports" passHref>
-                <span className={styles.dropdownLink}>Esportes</span>
+                <span className={styles.dropdownLink}>Sports</span>
               </Link>
             </DropdownItem>
             <DropdownItem className={styles.dropdownItemCustom}>
               <Link href="/category/Supernatural" passHref>
-                <span className={styles.dropdownLink}>Sobrenatural</span>
+                <span className={styles.dropdownLink}>Supernatural</span>
               </Link>
             </DropdownItem>
           </DropdownMenu>
